@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up – Blind Date Connect</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section class="signup" id="signup">
+    <h2>🔐 Register for a Blind Date</h2>
+    <form id="signup-form">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="number" name="age" placeholder="Your Age" min="18" required />
+
+      <select name="identity" required>
+        <option value="">I identify as...</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Non-Binary</option>
+        <option>Other</option>
+      </select>
+
+      <select name="preference" required>
+        <option value="">Looking to date...</option>
+        <option>Men</option>
+        <option>Women</option>
+        <option>Anyone</option>
+      </select>
+
+      <input type="text" name="desired_age_range" placeholder="Desired age range (e.g. 20–25)" required />
+
+      <textarea name="fact" placeholder="Fun fact or your vibe ✨"></textarea>
+
+      <button type="submit">Submit & Get Matched</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Blind Date Connect. Designed with ❤️</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('signup-form');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => data[key] = value);
+
+      fetch("/submit", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      .then(res => res.json())
+      .then(res => {
+        alert("✅ Submission successful! We'll match you soon.");
+        form.reset();
+      })
+      .catch(err => alert("❌ Something went wrong: " + err));
+    });
+  </script>
+</body>
+</html>

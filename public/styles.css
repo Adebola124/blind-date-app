@@ -1,0 +1,169 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffe6f0, #ffe0ff);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #ff69b4, #ff85c1);
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  background: white;
+  color: #ff1493;
+  font-weight: bold;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #fff0f5;
+  transform: scale(1.05);
+}
+
+/* How it Works */
+.how-it-works {
+  background-color: #fff0f6;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  color: #d63384;
+  margin-bottom: 2rem;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.step {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  max-width: 300px;
+}
+
+.step h3 {
+  color: #ff1493;
+  margin-bottom: 1rem;
+}
+
+/* Signup Form */
+.signup {
+  max-width: 550px;
+  background: white;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.1);
+}
+
+.signup h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #ff1493;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, select, textarea {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid #ffe0f0;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #ff69b4;
+  outline: none;
+}
+
+button {
+  padding: 1rem;
+  background: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #ff1493;
+}
+
+/* Testimonials */
+.testimonials {
+  background: #fff5fb;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.testimonials h2 {
+  margin-bottom: 2rem;
+  color: #d63384;
+}
+
+.card {
+  background: white;
+  padding: 1.2rem;
+  margin: 1rem auto;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  background: #fce4ec;
+  color: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
